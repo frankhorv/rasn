@@ -4,6 +4,7 @@
 //! ASN.1's terminology.
 
 mod any;
+mod constraints;
 mod instance;
 pub(crate) mod oid;
 mod open;
@@ -19,6 +20,7 @@ pub use ::{
 
 pub use self::{
     any::Any,
+    constraints::Constraints,
     instance::InstanceOf,
     oid::{ConstOid, ObjectIdentifier, Oid},
     open::Open,

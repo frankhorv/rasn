@@ -2,7 +2,7 @@ mod error;
 
 use alloc::vec::Vec;
 
-use crate::{Encode, types::{self, Tag}};
+use crate::{Encode, types::{self, Tag, Constraints}};
 
 pub use error::Error;
 
@@ -16,6 +16,7 @@ impl Encoder {
     }
 
     fn encode_length(&mut self, length: usize) {
+        todo!()
     }
 
     fn extend<'input>(&mut self, input: impl Into<Input<'input>>) {
@@ -88,6 +89,7 @@ impl crate::Encoder for Encoder {
         &mut self,
         tag: Tag,
         value: &types::Integer,
+        constraints: &[Constraints]
     ) -> Result<Self::Ok, Self::Error> {
         todo!()
     }
