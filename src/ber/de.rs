@@ -102,11 +102,13 @@ impl<'input> Decoder<'input> {
         if streaming {
             self.input = inner.input;
             self.parse_eoc()?;
-        } else if !inner.input.is_empty() {
-            return Err(Error::UnexpectedExtraData {
-                length: inner.input.len(),
-            });
         }
+        // [FHO]
+        // } else if !inner.input.is_empty() {
+        //     return Err(Error::UnexpectedExtraData {
+        //         length: inner.input.len(),
+        //     });
+        // }
 
         Ok(result)
     }
